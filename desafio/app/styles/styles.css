@@ -1,0 +1,68 @@
+body{
+    background-color: #d35400;
+    padding: 50px;
+}
+
+.botao-filtro{
+    width: 100%;
+    margin-bottom: 10px;
+    /* color: #2c3e50 */
+}
+
+.main-container{
+    padding-top: 50px;
+    background-color: white;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    
+}
+
+/* .container-botao-adicionar{
+    padding-right: 35px;
+} */
+
+.coluna-nome{
+    width: 60%;
+}
+
+.coluna-dt{
+    width: 33%;
+}
+
+.coluna-sexo{
+    width: 33%;
+}
+
+.botao-adicionar{
+    background-color: #2c3e50;
+    color: white;
+    float: right;
+}
+
+.botao-salvar{
+    background-color: #2c3e50;
+    color: white;
+    /* float: right; */
+}
+
+.botao-formulario{
+    width: 100%;
+}
+
+.icone-sexo{
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.botao-filtro-selecionado{
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.faixa-azul{
+    background-color: #2c3e50;
+    height: 100px;
+}

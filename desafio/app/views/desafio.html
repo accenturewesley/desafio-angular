@@ -1,0 +1,81 @@
+<div ng-controller="DesafioCtrl">
+    
+    <!-- Botoes -->
+    
+    <div class="row faixa-azul main-container">
+        
+    </div>
+    
+    <div class="row main-container">
+        <div class="col-md-3">
+            <button type="button" ng-class="corBotao('nome')" ng-click="selecionarBotao('nome')" class="btn btn-secondary">Ordernar Nome</button>
+            <button type="button" ng-class="corBotao('nascimento')" ng-click="selecionarBotao('nascimento')" class="btn btn-secondary">Ordernar Nascimento</button>
+            <button type="button" ng-class="corBotao('homem')" ng-click="selecionarBotao('homem')" class="btn btn-secondary">Ordernar Filtro Homens</button>
+            <button type="button" ng-class="corBotao('mulher')" ng-click="selecionarBotao('mulher')" class="btn btn-secondary">Ordernar Filtro Mulheres</button>
+        </div>
+    
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Campo de pesquisa está no ng-model do input de cima -->
+                    <input type="text" class="form-control" ng-model="busca" placeholder="QUALQUER COISA BACANA AQUI PARA SER BUSCADA :)">
+                </div>
+            </div>
+
+            <table class="table-responsive table table-striped">
+                <thead>
+                    <th class="coluna-nome">NOME</th>
+                    <th class="coluna-dt">DT NASCIMENTO</th> 
+                    <th class="coluna-sexo">SEXO</th>
+                <thead>
+                <tbody>
+                    <tr ng-repeat="pessoa in pessoas | filter:busca" ng-if="obterFiltro(pessoa)">
+                        <td ng-bind="pessoa.nome"></td>
+                        <td ng-bind="pessoa.dtFormatada"></td>
+                        <td ng-if="pessoa.sexo == 'masculino'"><img class="icone-sexo" src="./app/images/mas-icon.png"></td>
+                        <td ng-if="pessoa.sexo == 'feminino'"><img class="icone-sexo" src="./app/images/fem-icon.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-botao-adiciosnar">
+                        <button type="button" ng-click="adicionar()" class="btn btn-primary botao-adicionar">+ ADICIONAR</button>
+                    </div>
+                </div> 
+            </div>
+
+            <form ng-if="novaPessoa" class="container">
+                <div class="col-form-label">Nome: </div>  
+                <input class="form-control" ng-model="novaPessoa.nome" type="text" placeholder="Digite" required>
+                
+                <div class="row">
+                    <div class="col-md-3 col-form-label">Data de nascimento: </div>  
+                    <div class="col-md-3 col-form-label">Sexo: </div>  
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" ng-model="novaPessoa.dtNascimento" required>
+                    </div>  
+                    <div class="col-md-3">
+                        <select class="form-control" ng-model="novaPessoa.sexo">
+                            <option value=""></option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>  
+                    </div>  
+                    
+                    <div class="col-md-3">
+                        <button type="button" ng-click="cancelar()" class="btn botao-formulario btn-danger">CANCELAR</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button type="button" ng-click="salvar()" class="btn botao-formulario botao-salvar">SALVAR</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
