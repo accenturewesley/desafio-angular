@@ -61,13 +61,13 @@ app.controller('DesafioCtrl', ['$scope', '$filter', 'orderByFilter', function($s
     //Validação do botão
     $scope.salvar = function(){
         if(!$scope.novaPessoa.nome)
-            return alert('Preencha o nome');
+            return alert('Por favor, preencha o nome corretamente.');
 
         if(!$scope.novaPessoa.dtNascimento)
-            return alert('Preencha a data de nascimento');
+            return alert('Por favor, preencha a data de nascimento corretamente.');
 
         if(!$scope.novaPessoa.sexo)
-            return alert('Preencha o sexo');
+            return alert('Por favor, selecione o sexo.');
 
         //O input de date nao tava retornando um objeto date então tive que formatar a 
         //dtNascimento pra ser um objeto date
