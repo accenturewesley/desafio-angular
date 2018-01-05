@@ -1,0 +1,24 @@
+{
+    "pessoas": [
+        {
+            "nome": "Wesley Santos",
+            "dtNascimento": "08/09/1997",
+            "sexo": "masculino"
+        },
+        {
+            "nome": "Abner Ferreira",
+            "dtNascimento": "09/06/1996",
+            "sexo": "masculino"
+        },
+        {
+            "nome": "Beatriz Oliveira",
+            "dtNascimento": "09/08/1998",
+            "sexo": "feminino"
+        },
+        {
+            "nome": "Francine Moraes",
+            "dtNascimento": "12/10/1990",
+            "sexo": "feminino"
+        }
+    ]
+}
